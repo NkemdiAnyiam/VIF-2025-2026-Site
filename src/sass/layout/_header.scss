@@ -1,0 +1,88 @@
+.header {
+  @mixin gradient-overlay($color) {
+    background-image: linear-gradient(
+                        rgba(darken($color, 20%), 0.9) 3%,
+                        rgba($color, 0.9) 18%,
+                        rgba($color, 0.9)
+                      );
+    background-attachment: fixed;
+  }
+
+  position: relative;
+  padding: 0 2rem;
+  box-shadow: 0 -2px 10px rgba($color-black, 0.3);
+  height: var(--height);
+
+  display: grid;
+  place-content: center;
+
+  &--landing {
+    --height: 46rem;
+
+    @include media-max(640px) {
+      --height: 52rem;
+    }
+
+    @include media-max(560px) {
+      --height: 56rem;
+    }
+  }
+
+  &--normal {
+    --height: 30rem;
+  }
+
+  &__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    clip-path: inset(0); // necessary to contain position: fixed img
+
+    .header__background-picture {
+      // fixed positioning helps replicate 'background-attachment: fixed'
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: var(--height);
+
+      .header__background-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 50% 25%;
+      }
+    }
+
+    &--green {
+      &::after {
+        @include gradient-overlay($color-brand-green-darker);
+      }
+    }
+    &--yellow {
+      &::after {
+        @include gradient-overlay($color-brand-yellow-darker);
+      }
+    }
+
+    &::after {
+      @include pseudo-elem-cover;
+    }
+  }
+
+  .container {
+    display: grid;
+  }
+
+  &__intro-text {
+    max-width: 100rem;
+    font-size: max(1.8rem, 16px);
+    font-weight: 500;
+    line-height: 1.5;
+    text-align: center;
+    text-shadow: $text-shadow;
+  }
+}

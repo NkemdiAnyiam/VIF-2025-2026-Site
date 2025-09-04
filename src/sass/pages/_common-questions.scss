@@ -1,0 +1,16 @@
+.common-questions-page {
+  .section {
+    &--student-questions,
+    &--company-questions {
+      @include full-bleed;
+    }
+  }
+
+  .question-list {
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+}

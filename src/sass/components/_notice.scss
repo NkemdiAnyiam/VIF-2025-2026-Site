@@ -1,0 +1,19 @@
+.notice {
+  background-color: $color-brand-red-darker;
+  color: $color-gray-lightest;
+  padding: 1rem;
+
+  display: flex;
+  gap: 1rem;
+
+  .exclamation {
+    font-size: 5rem;
+    font-family: $font-bebas;
+    line-height: 1;
+  }
+
+  .message {
+    align-self: center;
+    line-height: 1.5;
+  }
+}

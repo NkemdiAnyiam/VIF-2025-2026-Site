@@ -1,0 +1,53 @@
+.for-industry-page {
+  .section--welcome-industry {
+    .registration-button {
+      @include button-neon;
+      // width: fit-content;
+      text-align: center;
+      margin: -1.6rem 0;
+    }
+  }
+
+  .section--volunteer-events {
+    @include section-color($color-violet-dark);
+    @include full-bleed;
+
+    .paragraphs {
+      &--align-left {
+        text-align: left;
+      }
+
+      .photo-and-paragraph {
+        display: flex;
+        gap: 2rem;
+
+        p {
+          flex: 1;
+        }
+
+        .building-photo-picture {
+          order: -1;
+          flex: 1;
+          align-self: flex-start;
+          border: 1px dashed $color-gray-light;
+
+          .building-photo-img {
+            object-fit: contain;
+            width: 100%;
+            height: 100%;
+
+            display: block;
+          }
+        }
+
+        @include media-max(640px) {
+          flex-direction: column;
+
+          .building-photo-picture {
+            order: unset;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,58 @@
+.picture-square {
+  position: relative;
+  max-width: 30rem;
+  min-width: 24rem;
+  width: 100%;
+  height: 15rem;
+  border: 1px dashed $color-gray-light;
+  padding: 1rem;
+
+  display: grid;
+  place-content: center;
+
+  &.picture-square--green {
+    --bg-color: #{rgba(darken($color-brand-green-darker, 12%), 0.8)};
+  }
+  &.picture-square--red {
+    --bg-color: #{rgba(darken($color-brand-red-darker, 10%), 0.8)};
+  }
+  &.picture-square--yellow {
+    --bg-color: #{rgba(darken($color-brand-yellow-darker, 16%), 0.8)};
+  }
+  &.picture-square--purple {
+    --bg-color: #{rgba(darken($color-violet, 28%), 0.8)};
+  }
+
+  &__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    filter: blur(1.5px);
+
+    &::after {
+      @include pseudo-elem-cover;
+      background-image: linear-gradient(
+                          $color-violet-darkest -10%,
+                          var(--bg-color),
+                          var(--bg-color),
+                          $color-violet-darkest 110%
+                        );
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: inline-block;
+  }
+
+  &__text {
+    text-align: center;
+    font-weight: 500;
+    text-shadow: $text-shadow;
+  }
+}

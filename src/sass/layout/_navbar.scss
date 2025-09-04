@@ -1,0 +1,304 @@
+.navbar {
+  --nav-height: 8rem;
+  $nav-height: var(--nav-height);
+
+  z-index: 1001;
+  height: $nav-height;
+  margin-bottom: calc($nav-height * -1);
+  padding: 1rem min(4rem, 4vw);
+  // transition: background-color 0.2s,
+  //             border-bottom 0.2s,
+  //             box-shadow 0.2s;
+  //             height 0.2s,
+  //             margin-bottom 0.2s;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &:not(.navbar--sticky) {
+    background-color: transparent;
+    border-bottom: 1px solid transparent;
+    backdrop-filter: blur(0);
+    box-shadow: 0 2px 10px transparent;
+  }
+
+  &.navbar--sticky.navbar--expanded {
+    grid-template-rows: 4rem 1fr;
+  }
+
+  &.navbar--sticky,
+  &.navbar--expanded {
+    position: sticky;
+    top: 0;
+    background-color: rgba(darken($color-violet-darkest, 10%), 0.8);
+    border-bottom: 1px solid $color-gray;
+    backdrop-filter: blur(2px);
+    box-shadow: 0 2px 10px rgba(black, 0.7);
+  }
+
+  &.navbar--sticky {
+    --nav-height: 6rem;
+
+    .navbar__logo-link {
+      height: 3.6rem;
+    }
+  }
+
+  &.navbar--expanded {
+    --nav-height: 100vh;
+    overflow-y: auto;
+
+    display: grid;
+    grid-template-areas: "logo hamburger"
+                         "links links";
+    grid-template-columns: 1fr auto;
+    grid-template-rows: 6rem 1fr;
+  }
+
+  &__logos {
+    grid-area: logo;
+    margin-right: auto;
+
+    display: flex;
+    // gap: min(2vw, 2.4rem);
+    gap: 0.6rem;
+  }
+
+  &__logo-link {
+    position: relative;
+    height: 4rem;
+    transition: height 0.05s;
+
+    display: flex;
+    align-items: center;
+
+    @include media-max(375px) {
+      height: 3.6rem;
+    }
+
+    &--vif {
+    }
+
+    &--tamu {
+    }
+
+    .vif-logo-mark,
+    .vif-logo-wide {
+      height: 100%;
+      transition: filter 0.1s;
+
+      &:hover { filter: brightness(1.1); }
+      &:active { filter: brightness(0.95); }
+
+      &.vif-logo--invisible {
+        display: none;
+      }
+    }
+
+    .tamu-logo-mark,
+    .tamu-logo-wide {
+      height: 100%;
+      fill: $color-white;
+    }
+  }
+
+  &__links-list {
+    grid-area: links;
+    list-style: none;
+    font-size: max(2rem, 18px);
+
+    display: flex;
+    gap: 2vw;
+
+    &.navbar__links-list--expanded {
+      height: 100%;
+      font-size: 4rem;
+
+      flex-direction: column;
+      gap: 4rem;
+
+      .navbar__link--top-level {
+        background-color: transparent;
+        color: $color-gray-light;
+
+        .dropdown-marker {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__nested-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    list-style: none;
+    font-size: max(1.8rem, 16px);
+    background-color: rgba(darken($color-violet-darkest, 10%), 0.8);
+    border: 1px solid $color-gray;
+    min-width: max-content;
+    width: 100%;
+    
+    display: none;
+    flex-direction: column;
+    align-items: center;
+
+    &.navbar__nested-list--expanded {
+      position: unset;
+      font-size: 3rem;
+      background-color: rgba(darken($color-violet-darkest, 10%), 0.4);
+
+      display: flex;
+
+      .navbar__link--nested {
+        justify-content: center;
+        padding-top: 1.2rem;
+        padding-bottom: 1.2rem;
+      }
+    }
+  }
+
+  &__item {
+    position: relative;
+
+    &:hover,
+    &:focus-within {
+      .navbar__nested-list {
+        display: flex;
+      }
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    font-family: $font-bebas;
+    padding: 0.4rem 1.2rem;
+    transition: background-color 0.1s;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:link,
+    &:visited {
+      color: $color-gray-lightest;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: rgba($color-gray, 0.5);
+    }
+
+    &:active:not(.navbar__link--top-level) {
+      background-color: rgba($color-gray, 0.3);
+    }
+
+    &.navbar__link--active:not(.navbar__link--top-level) {
+      background-color: rgba($color-gray, 0.3);
+      color: lighten($color-brand-yellow-light, 5%);
+      cursor: default;
+    }
+
+    &.navbar__link--nested {
+      width: 100%;
+
+      justify-content: flex-start;
+
+      &:not(:last-child) {
+        border-bottom: 1px dashed $color-gray;
+      }
+    }
+
+    &.navbar__link--top-level {
+      cursor: default;
+    }
+
+    &--disabled {
+      cursor: not-allowed;
+
+      &:link,
+      &:visited {
+        color: $color-gray-light;
+      }
+
+      &:active:not(.navbar__link--top-level) {
+        background-color: rgba($color-gray, 0.5);
+      }
+    }
+
+    .dropdown-marker {
+      display: inline-block;
+      width: 1.4rem;
+      height: 0.7rem;
+      clip-path: polygon(0 0, 100% 0, 50% 100%);
+      background-color: currentColor;
+      margin-left: 0.8rem;
+      margin-bottom: 0.2rem;
+    }
+  }
+
+  &__hamburger {
+    grid-area: hamburger;
+
+    display: grid;
+    place-content: center;
+
+    &-button {
+      box-sizing: content-box;
+      height: 2.4rem;
+      width: 3rem;
+      color: inherit;
+      background-color: transparent;
+      border: none;
+      transition: color 0.1s;
+      cursor: pointer;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      &:hover {
+        background-color: rgba($color-gray, 0.5);
+      }
+  
+      &:active {
+        background-color: rgba($color-gray, 0.3);
+      }
+    }
+
+    &-bar {
+      width: 100%;
+      height: 3px;
+      background-color: currentColor;
+      margin-left: auto;
+    }
+  }
+
+  &__close-button {
+    grid-area: hamburger;
+    color: $color-brand-red-light;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    height: 2.4rem;
+    width: 2.4rem;
+    transition: color 0.1s;
+
+    display: grid;
+    place-content: center;
+
+    &:hover {
+      opacity: 1;
+      color: $color-brand-red;
+    }
+    &:active {
+      color: darken($color-brand-red, 10%);
+    }
+  }
+
+  &__close-button-icon {
+    fill: currentColor;
+    width: 100%;
+  }
+}

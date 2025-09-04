@@ -1,0 +1,213 @@
+.committee-block {
+  $fill-color: var(--fill-color);
+  $fill-color-hover: var(--fill-color-hover);
+  $fill-color-active: var(--fill-color-active);
+  $border-color: var(--border-color);
+  height: 100%;
+  // max-width: 50rem;
+
+  display: flex;
+  flex-direction: column;
+
+  &--yellow {
+    --fill-color: #{rgba(darken($color-brand-yellow-darker, 18%), 0.85)};
+    --fill-color-hover: #{rgba(darken($color-brand-yellow-darker, 10%), 1)};
+    --fill-color-active: #{rgba(darken($color-brand-yellow-darker, 14%), 1)};
+    --border-color: #{lighten($color-brand-yellow-darker, 10%)};
+  }
+
+  &--red {
+    --fill-color: #{rgba(darken($color-brand-red-darker, 8%), 0.85)};
+    --fill-color-hover: #{rgba(darken($color-brand-red-darker, 0%), 1)};
+    --fill-color-active: #{rgba(darken($color-brand-red-darker, 4%), 1)};
+    --border-color: #{lighten($color-brand-red-darker, 30%)};
+  }
+
+  &--green {
+    --fill-color: #{rgba(darken($color-brand-green-darker, 13%), 0.85)};
+    --fill-color-hover: #{rgba(darken($color-brand-green-darker, 5%), 1)};
+    --fill-color-active: #{rgba(darken($color-brand-green-darker, 9%), 1)};
+    --border-color: #{lighten($color-brand-green-darker, 16%)};
+  }
+
+  &--purple {
+    --fill-color: #{rgba(darken($color-violet, 30%), 0.85)};
+    --fill-color-hover: #{rgba(darken($color-violet, 22%), 1)};
+    --fill-color-active: #{rgba(darken($color-violet, 26%), 1)};
+    --border-color: #{lighten($color-violet, 16%)};
+  }
+
+  &--white {
+    --fill-color: #{rgba(darken($color-gray, 30%), 0.85)};
+    --fill-color-hover: #{rgba(darken($color-gray, 22%), 1)};
+    --fill-color-active: #{rgba(darken($color-gray, 26%), 1)};
+    --border-color: #{lighten($color-gray, 10%)};
+  }
+
+  &__header,
+  &__description,
+  &__header .committee-block__photo-container {
+    border: 2px solid $border-color;
+  }
+
+  &__header {
+    position: relative;
+    width: 100%;
+    padding: 1.6rem 3rem;
+    padding-right: 4rem;
+    background-color: $fill-color;
+    transition: background-color 0.1s;
+    cursor: pointer;
+
+    display: grid;
+    grid-template-areas: "photo title"
+                         "photo socials";
+    grid-template-columns: min-content 1fr;
+    gap: 2rem;
+
+    @supports selector(:has(*)) {
+      &:not(:has(.committee-block__social-link:hover)):hover {
+        background-color: $fill-color-hover;
+      }
+  
+      &:not(:has(.committee-block__social-link:active)):active {
+        background-color: $fill-color-active;
+      }
+    }
+
+    @supports not selector(:has(*)) {
+      &:hover {
+        background-color: $fill-color-hover;
+      }
+  
+      &:active {
+        background-color: $fill-color-active;
+      }
+    }
+
+    @include media-max(425px) {
+      grid-template-areas: "photo title"
+                           "socials socials";
+      flex-direction: column;
+      // align-items: center;
+      // text-align: center;
+    }
+
+    .dropdown-marker-container {
+      position: absolute;
+      top: 1.6rem;
+      right: 2rem;
+      margin-left: 1.2rem;
+      border: none;
+      background-color: unset;
+      color: currentColor;
+      align-self: start;
+      justify-self: end;
+      cursor: pointer;
+
+      .dropdown-marker {
+        display: inline-block;
+        justify-self: center;
+        width: 2rem;
+        height: 1rem;
+        clip-path: polygon(0 0, 100% 0, 50% 100%);
+        background-color: currentColor;
+
+        &--up {
+          rotate: z 180deg;
+        }
+      }
+    }
+
+    &:hover {
+      .committee-block__photo--special {
+        opacity: 1 !important;
+      }
+    }
+
+    .committee-block__photo-container {
+      position: relative;
+      grid-area: photo;
+      min-width: 10rem;
+      min-height: 10rem;
+
+      .committee-block__photo {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+        &--special {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+
+          opacity: 0;
+          transition: opacity 0.2s;
+        }
+      }
+    }
+
+    .committee-block__title {
+      grid-area: title;
+      // align-self: start;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+
+      .committee-block__name {
+        margin-bottom: 0;
+        font-size: max(2rem, 18px);
+      }
+
+      .committee-block__role {
+
+      }
+    }
+
+    .committee-block__socials {
+      grid-area: socials;
+      list-style: none;
+
+      display: flex;
+      gap: 15px;
+      
+      @include media-max(425px) {
+        gap: 2rem;
+      }
+
+      .committee-block__social-item {
+        width: 30px;
+        height: 30px;
+        .committee-block__social-link {
+          display: inline-block;
+          width: 100%;
+          height: 100%;
+          fill: $color-white;
+          stroke: $color-white;
+          @include icon-solid(darken($color-white, 15%));
+        }
+      }
+    }
+  }
+
+  &__description {
+    width: 100%;
+    flex: 1;
+    padding: 1.6rem 3rem;
+    border-top: none;
+    background-color: rgba($color-black, 0.3);
+    overflow: hidden;
+
+    &--hidden {
+      flex: 0;
+      flex-basis: 0;
+      padding: 0;
+      margin: 0;
+      border: none;
+    }
+  }
+}
+

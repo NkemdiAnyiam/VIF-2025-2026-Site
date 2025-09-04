@@ -1,0 +1,226 @@
+.company-card {
+  $fill-color: var(--fill-color);
+  $fill-color-hover: var(--fill-color-hover);
+  $fill-color-active: var(--fill-color-active);
+  $border-color: var(--border-color);
+  $border-width: 2px;
+  $border-style: $border-width solid $border-color;
+  border: $border-style;
+  height: 100%;
+  // max-width: 50rem;
+
+  display: flex;
+  flex-direction: column;
+
+  &--white {
+    --fill-color: #{rgba(darken($color-gray, 30%), 0.85)};
+    --fill-color-hover: #{rgba(darken($color-gray, 22%), 1)};
+    --fill-color-active: #{rgba(darken($color-gray, 26%), 1)};
+    --border-color: #{lighten($color-gray, 10%)};
+  }
+
+  &--purple {
+    --fill-color: #{rgba(darken($color-violet, 30%), 0.85)};
+    --fill-color-hover: #{rgba(darken($color-violet, 22%), 1)};
+    --fill-color-active: #{rgba(darken($color-violet, 26%), 1)};
+    --border-color: #{lighten($color-violet, 16%)};
+  }
+
+  &__header {
+    position: relative;
+    width: 100%;
+    padding: 1.6rem 3rem;
+    padding-right: 4rem;
+    background-color: $fill-color;
+    transition: background-color 0.1s;
+    cursor: pointer;
+
+    display: grid;
+    grid-template-areas: "photo title"
+                         "photo focuses";
+    grid-template-columns: min-content 1fr;
+    column-gap: 2rem;
+    row-gap: 1rem;
+
+    @supports selector(:has(*)) {
+      &:not(:has(.company-card__social-link:hover)):hover {
+        background-color: $fill-color-hover;
+      }
+  
+      &:not(:has(.company-card__social-link:active)):active {
+        background-color: $fill-color-active;
+      }
+    }
+
+    @supports not selector(:has(*)) {
+      &:hover {
+        background-color: $fill-color-hover;
+      }
+  
+      &:active {
+        background-color: $fill-color-active;
+      }
+    }
+
+    @include media-max(560px) {
+      grid-template-areas: "photo title"
+                           "focuses focuses";
+      flex-direction: column;
+    }
+
+    .dropdown-marker-container {
+      position: absolute;
+      top: 1.6rem;
+      right: 2rem;
+      margin-left: 1.2rem;
+      color: currentColor;
+      background-color: unset;
+      border: none;
+      align-self: start;
+      justify-self: end;
+      cursor: pointer;
+
+      .dropdown-marker {
+        display: inline-block;
+        justify-self: center;
+        width: 2rem;
+        height: 1rem;
+        clip-path: polygon(0 0, 100% 0, 50% 100%);
+        background-color: currentColor;
+
+        &--up {
+          rotate: z 180deg;
+        }
+      }
+    }
+  }
+
+  &__photo-container {
+    position: relative;
+    grid-area: photo;
+    width: 8rem;
+    height: 8rem;
+    background-color: $color-white;
+    border: $border-style;
+    overflow: hidden;
+
+    display: grid;
+    place-content: center;
+  }
+
+  &__picture {
+    position: relative;
+    width: 8rem;
+    height: 8rem;
+    padding: $border-width;
+
+    &--blurred {
+      opacity: 0.3;
+      width: 150%;
+      height: 150%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      translate: -50% -50%;
+      filter: blur(5px);
+      padding: 0;
+    }
+  }
+
+  &__photo {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
+    &--blurred {
+      object-fit: cover;
+    }
+  }
+
+  &__title {
+    grid-area: title;
+    // align-self: start;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+
+    .company-card__name {
+      margin-bottom: 0;
+      font-size: max(2rem, 17px);
+    }
+  }
+
+  &__focuses {
+    grid-area: focuses;
+    font-size: 16px;
+  }
+
+  &__description {
+    width: 100%;
+    flex: 1;
+    padding: 1.6rem 3rem;
+    border-top: $border-style;
+    border-top-width: 1px;
+    background-color: rgba($color-black, 0.3);
+    overflow: hidden;
+    
+    display: flex;
+    gap: 1.6rem;
+    flex-wrap: wrap;
+
+    @include media-max(768px) {
+      flex-direction: column;
+    }
+
+    &--hidden {
+      flex: 0;
+      flex-basis: 0;
+      padding: 0;
+      margin: 0;
+      border: none;
+    }
+
+    .heading-quaternary {
+      font-size: max(1.8rem, 16px);
+    }
+  }
+
+  &__description-section {
+    flex: 1;
+    padding: 1rem;
+    border: 1px dashed $color-gray-light;
+  }
+  
+  &__website {
+    line-height: 1.2;
+  }
+
+  &__positions-list {
+    list-style: none;
+
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+    
+  &__tag {
+    background-color: $color-violet;
+    color: $color-white;
+    padding: 0.6rem 0.8rem;
+    width: max-content;
+
+    &--green {
+      background-color: darken($color-brand-green-darker, 2%);
+    }
+
+    &--red {
+      background-color: $color-brand-red-dark;
+    }
+
+    &--yellow {
+      background-color: darken($color-brand-yellow-darker, 2%);
+    }
+  }
+}
+

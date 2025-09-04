@@ -1,0 +1,71 @@
+.home-page {
+  .section.section--introduction {
+    // @include section-color($color-violet-darkest);
+    // @include full-bleed;
+    .video-box {
+      margin-bottom: 3.6rem;
+    }
+  }
+
+  .section--virtual-professionalism-workshops {
+    @include section-color($color-violet-darkest);
+    @include full-bleed;
+  }
+
+  .section--virtual-portfolio-reviews {
+    @include section-color($color-violet-dark);
+    @include full-bleed;
+  }
+
+  .section--virtual-mock-interviews {
+    @include section-color($color-violet-darkest);
+    @include full-bleed;
+  }
+
+  .section--industry-fair {
+    @include section-color($color-violet-dark);
+    @include full-bleed;
+  }
+
+  // .section.section--cta {
+  //   display: grid;
+  //   @include full-bleed;
+  //   @include section-color($color-violet-dark);
+  // }
+
+  .cta-text {
+    margin-bottom: 3rem;
+    margin-top: 3.6rem;
+  }
+
+  .cta-buttons {
+    margin: 0 auto;
+    @include full-bleed;
+
+    display: flex;
+    justify-content: center;
+    gap: 3rem 6rem;
+    flex-wrap: wrap;
+
+    // .cta-button {
+    //   text-decoration: none;
+    //   @include button-solid($color-brand-green, false);
+    //   padding: 1rem 2rem;
+    //   font-family: $font-bebas;
+    //   font-size: max(2rem, 18px);
+
+    //   &:link,
+    //   &:visited {
+    //     // color: $color-gray-lightest;
+    //     color: $color-black;
+    //   }
+
+    //   &--yellow { @include button-solid($color-brand-yellow); }
+    //   &--red { @include button-solid($color-brand-red-light); }
+    // }
+
+    .cta-button {
+      @include button-neon;
+    }
+  }
+}

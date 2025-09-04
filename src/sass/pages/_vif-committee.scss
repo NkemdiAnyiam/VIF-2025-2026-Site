@@ -1,0 +1,25 @@
+.vif-committee-page {
+  .section {
+    &--vif-committee-members {
+      @include full-bleed;
+    }
+  }
+
+  .committee-list {
+    list-style: none;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+    justify-items: center;
+    gap: 4rem;
+
+    @include media-max(425px) {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .committee-item {
+      height: 100%;
+    }
+  }
+}

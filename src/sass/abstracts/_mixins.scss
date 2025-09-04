@@ -1,0 +1,118 @@
+@mixin media-max($width) {
+  @media only screen and (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin media-max-height($height) {
+  @media only screen and (max-height: $height) {
+    @content;
+  }
+}
+
+@mixin icon-solid($fill) {
+  transition: fill 0.1s, stroke 0.1s, scale 0.1s;
+
+  &:hover {
+    fill: $fill;
+    stroke: $fill;
+    scale: 0.98;
+  }
+  &:active {
+    fill: darken($fill, 15%);
+    stroke: darken($fill, 15%);
+    scale: 0.96;
+  }
+}
+
+@mixin button-solid($fill, $neutral-fill: true) {
+  @if $neutral-fill == true {
+    background-color: $fill;
+  }
+  transition: fill 0.1s, scale 0.1s;
+
+  &:hover {
+    background-color: $fill;
+    scale: 0.99;
+  }
+  &:active {
+    background-color: darken($fill, 10%);
+    scale: 0.98;
+  }
+}
+
+@mixin button-neon() {
+  $fill-color: var(--fill-color);
+  $fill-color-hover: var(--fill-color-hover);
+  $fill-color-active: var(--fill-color-active);
+  $border-color: var(--border-color);
+  text-decoration: none;
+  padding: 1rem 2rem;
+  font-family: $font-bebas;
+  font-size: max(2rem, 18px);
+  border: 2px solid $border-color;
+  background-color: $fill-color;
+  transition: background-color 0.1s;
+  cursor: pointer;
+
+  &:link,
+  &:visited,
+  & {
+    color: $color-gray-lightest;
+  }
+
+  &:hover {
+    background-color: $fill-color-hover;
+  }
+
+  &:active {
+    background-color: $fill-color-active;
+  }
+
+  &--yellow {
+    --fill-color: #{rgba(darken($color-brand-yellow-darker, 18%), 0.85)};
+    --fill-color-hover: #{rgba(darken($color-brand-yellow-darker, 10%), 1)};
+    --fill-color-active: #{rgba(darken($color-brand-yellow-darker, 14%), 1)};
+    --border-color: #{lighten($color-brand-yellow-darker, 10%)};
+  }
+
+  &--red {
+    --fill-color: #{rgba(darken($color-brand-red-darker, 8%), 0.85)};
+    --fill-color-hover: #{rgba(darken($color-brand-red-darker, 0%), 1)};
+    --fill-color-active: #{rgba(darken($color-brand-red-darker, 4%), 1)};
+    --border-color: #{lighten($color-brand-red-darker, 30%)};
+  }
+
+  &--green {
+    --fill-color: #{rgba(darken($color-brand-green-darker, 13%), 0.85)};
+    --fill-color-hover: #{rgba(darken($color-brand-green-darker, 5%), 1)};
+    --fill-color-active: #{rgba(darken($color-brand-green-darker, 9%), 1)};
+    --border-color: #{lighten($color-brand-green-darker, 16%)};
+  }
+
+  &--purple {
+    --fill-color: #{rgba(darken($color-violet, 30%), 0.85)};
+    --fill-color-hover: #{rgba(darken($color-violet, 22%), 1)};
+    --fill-color-active: #{rgba(darken($color-violet, 26%), 1)};
+    --border-color: #{lighten($color-violet, 16%)};
+  }
+}
+
+@mixin section-color($fill) {
+  background-color: rgba($fill, 0.85);
+  box-shadow: -6px 0px 6px rgba(black, 0.3);
+}
+
+@mixin full-bleed() {
+  max-width: unset;
+}
+
+@mixin pseudo-elem-cover {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

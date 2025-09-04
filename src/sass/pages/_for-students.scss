@@ -1,0 +1,119 @@
+.for-students-page {
+  .section--past-companies {
+    @include full-bleed;
+    // @include section-color($color-violet-dark);
+
+    .container {
+      // @include full-bleed;
+    }
+    
+    .paragraphs {
+      text-align: center;
+      margin-bottom: 3rem;
+      // font-size: max(1.8rem, 16px);
+    }
+
+    .past-company-list {
+      list-style: none;
+
+      display: grid;
+      justify-content: center;
+      grid-template-columns: repeat(auto-fit, 40rem);
+      align-items: stretch;
+      gap: 0.6rem;
+
+      @include media-max(900px) {
+        max-width: 50rem;
+        margin: 0 auto;
+
+        display: flex;
+        flex-direction: column;
+      }
+
+      .past-company-item {
+        --bg-color: #{rgba(darken($color-brand-yellow-darker, 12%), 0.8)};
+        height: 100%;
+
+        &:nth-child(4n + 1) {
+          --bg-color: #{rgba(darken($color-brand-green-darker, 8%), 0.8)};
+        }
+        &:nth-child(4n + 2) {
+          --bg-color: #{rgba(darken($color-brand-green-darker, 8%), 0.8)};
+        }
+        &:nth-child(4n + 3) {
+          --bg-color: #{rgba(darken($color-brand-yellow-darker, 12%), 0.8)};
+        }
+        &:nth-child(4n + 4) {
+          --bg-color: #{rgba(darken($color-brand-yellow-darker, 12%), 0.8)};
+        }
+
+        @include media-max(900px) {
+          &:nth-child(2n + 1) {
+            --bg-color: #{rgba(darken($color-brand-green-darker, 8%), 0.8)};
+          }
+          &:nth-child(2n) {
+            --bg-color: #{rgba(darken($color-brand-yellow-darker, 12%), 0.8)};
+          }
+        }
+
+        .past-company-box {
+          width: 100%;
+          height: 100%;
+          padding: 1rem 1rem;
+          line-height: 1.4;
+          text-align: center;
+          border: 1px dashed $color-gray-light;
+          background-color: var(--bg-color);
+
+          display: grid;
+          place-content: center;
+        }
+      }
+    }
+  }
+
+  .section--additional-events {
+    @include section-color($color-violet-dark);
+    @include full-bleed;
+
+    .events {
+      margin-top: 3rem;
+
+      .paragraphs {
+        text-align: unset;
+
+        .photo-and-paragraph {
+          display: flex;
+          gap: 2rem;
+
+          p {
+            flex: 1;
+          }
+
+          .building-photo-picture {
+            order: -1;
+            flex: 1;
+            align-self: flex-start;
+            border: 1px dashed $color-gray-light;
+
+            .building-photo-img {
+              object-fit: contain;
+              width: 100%;
+              height: 100%;
+
+              display: block;
+            }
+          }
+
+          @include media-max(640px) {
+            flex-direction: column;
+
+            .building-photo-picture {
+              order: unset;
+            }
+          }
+        }
+      }
+    }
+  }
+}

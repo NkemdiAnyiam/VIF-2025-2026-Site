@@ -1,0 +1,168 @@
+.timetable {
+  position: relative;
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    width: unset;
+    // box-shadow: -10px 0 10px black;
+
+    &-track {
+      background-color: $color-violet-lightest;
+    }
+
+    &-thumb,
+    &-button:single-button {
+      background-color: darken($color-violet, 10%);
+
+      &:hover {
+        background-color: lighten($color-violet-darkest, 15%);
+      }
+
+      &:active {
+        background-color: lighten($color-violet-darkest, 5%);
+      }
+
+    }
+
+    &-thumb {
+    }
+
+    &-button:single-button {
+      border: 0.1rem solid $color-violet-lightest;
+    }
+
+    &-corner {
+      background-color: lighten($color-violet-darkest, 5%);
+    }
+  }
+  
+  overscroll-behavior: contain;
+  width: max-content;
+  max-width: 100%;
+  max-height: 70vh;
+  border: 2px solid $color-gray-lightest;
+  // box-shadow: 0 2px 10px $color-black;
+
+  @include media-max(1024px) {
+    overscroll-behavior: unset;
+  }
+  
+  &__row {
+    position: relative;
+    width: max-content;
+    min-height: min(56px, 6rem);
+    
+    display: flex;
+
+    // row underline
+    &:not(:last-child, :first-child) {
+      .cell {
+        border-bottom: 1.5px solid $color-gray-lightest;
+      }
+    }
+
+    &:first-child {
+      position: sticky;
+      height: unset;
+      z-index: 2;
+      top: 0;
+      left: 0;
+      font-weight: bold;
+      border-bottom: 2px solid $color-gray-lightest;
+      box-shadow: 0 2px 10px rgba($color-black, 0.4);
+
+      .cell {
+        background-color: $color-violet !important;
+
+        &:first-child {
+          z-index: 2;
+          font-size: max(2rem, 18px);
+        }
+
+        &:not(:first-child) {
+          span {
+            position: relative;
+            background-color: $color-violet;
+            display: inline-block;
+            translate: -50%;
+            padding: 0.5px;
+
+            &::after {
+              @include pseudo-elem-cover; // height: 100% is more than enough to cover dashes
+              top: -100%;
+              background-color: $color-violet;
+            }
+          }
+        }
+
+        &:nth-last-child(2) {
+          position: unset;
+          width: 0;
+        }
+
+        &--spacer {
+          background-color: $color-violet;
+        }
+      }
+    }
+
+    // change background color of empty cells when row is hovered to increased accessibility
+    &:not(:first-child):hover {
+      .cell:not(.cell--filled) {
+        background-color: lighten($color-violet-dark, 7%);
+      }
+    }
+
+    .cell {
+      background-color: $color-violet-dark;
+      transition: background-color 0.1s;
+      width: 7rem;
+      flex: 0 0 auto;
+
+      display: flex;
+      align-items: center;
+      
+      &:not(:last-child) {
+        border-right: 1px dashed $color-gray-lightest;
+      }
+
+      &--filled,
+      &--empty,
+      &--spacer {
+        user-select: none;
+        cursor: move;
+      }
+
+      &--filled {
+        background-color: var(--cell-fill-color);
+
+        &.cell--group-hovered {
+          background-color: color-mix(in srgb,var(--cell-fill-color),#fff 20%);
+        }
+
+        @supports selector(:has(*)) {
+          &:has(+ .cell--filled) {
+            border-right: 1px dashed rgba($color-gray-lightest, 0.35);
+            stroke-dasharray: 12;
+          }
+        }
+      }
+
+      &:first-child {
+        position: sticky;
+        left: 0;
+        top: 0;
+        width: 20rem;
+        padding: 1rem 2rem;
+        border-right: 2px solid $color-gray-lightest;
+        box-shadow: 2px 0 10px rgba($color-black, 0.4);
+        background-color: lighten($color-violet-dark, 3%);
+      }
+
+      &--spacer {
+        width: 30px;
+        background-color: $color-black;
+      };
+    }
+  }
+}

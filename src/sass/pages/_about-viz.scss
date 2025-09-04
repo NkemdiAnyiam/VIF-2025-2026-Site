@@ -1,0 +1,63 @@
+.about-viz-page {
+  .section.section--development {
+    // @include full-bleed;
+  }
+  
+  .section.section--programs {
+    @include section-color($color-violet-dark);
+    @include full-bleed;
+
+    .container {
+      @include full-bleed;
+    }
+
+    .paragraphs {
+      text-align: center;
+      margin-bottom: 3rem;
+      // font-size: max(1.8rem, 16px);
+    }
+
+    .programs__list {
+      list-style: none;
+
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .programs__item {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  .section.section--sizzle-reels {
+    // @include full-bleed;
+
+    .paragraphs {
+      text-align: center;
+      margin-bottom: 3rem;
+      // font-size: max(1.8rem, 16px);
+    }
+
+    .video-list {
+      list-style: none;
+
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 4rem;
+      
+      .video-item {
+        flex: 1 0 50rem;
+        max-width: 70rem;
+
+        @include media-max(560px) {
+          flex-basis: 30rem;
+        }
+      }
+    }
+  }
+}

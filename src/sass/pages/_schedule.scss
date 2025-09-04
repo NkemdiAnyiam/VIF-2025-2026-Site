@@ -1,0 +1,111 @@
+.schedule-page {
+  .event-tables {
+    margin-top: 2rem;
+
+    display: flex;
+    gap: 2rem;
+
+    caption {
+      text-align: left;
+      font-weight: bold;
+      font-size: max(2rem, 18px);
+      margin-bottom: 1rem;
+    }
+
+    table {
+      border: 2px solid white;
+      border-collapse: collapse;
+    }
+
+    thead {
+      font-weight: bold;
+      font-size: max(1.8rem, 17px);
+
+      tr {
+        background-color: $color-violet !important;
+      }
+    }
+
+    tbody {
+    }
+
+    tr {
+      &:nth-child(odd) {
+        background-color: lighten($color-violet-dark, 5%);
+      }
+      &:nth-child(even) {
+        background-color: $color-violet-darkest;
+      }
+    }
+
+    th, td {
+      text-align: left;
+      padding: 1.2rem;
+      border: 1.5px solid white;
+      line-height: 1.5;
+    }
+  }
+
+  .section--timetable {
+    @include full-bleed;
+    @include section-color($color-violet-dark);
+
+    .timetables {
+      display: flex;
+      flex-direction: column;
+      gap: 5rem;
+
+      .timetable-container {
+        // FOR ADDING INSET SHADOW ON RIGHT
+        // position: relative;
+        // &::after {
+        //   @include pseudo-elem-cover;
+        //   left: unset;
+        //   right: 0;
+        //   width: 20rem;
+        //   translate: calc(100% - 2px);
+        //   z-index: 5;
+        //   box-shadow: -2px 0 10px rgba($color-black, 0.4);
+        //   pointer-events: none;
+        // }
+
+        &--virtual {
+          --cell-fill-color: #{$color-brand-green};
+        }
+
+        &--in-person {
+          --cell-fill-color: #{darken($color-brand-yellow, 10%)};
+        }
+      }
+    }
+  }
+
+  .section--companies {
+    // @include full-bleed;
+    // @include section-color($color-violet-darkest);
+
+    .companies-list {
+      list-style: none;
+  
+      display: grid;
+      // grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+      // justify-items: center;
+      // gap: 2rem;
+  
+      @include media-max(425px) {
+        display: flex;
+        flex-direction: column;
+      }
+  
+      .company-item {
+        height: 100%;
+
+        &:not(:first-child) {
+          .company-card {
+            border-top: none !important;
+          }
+        }
+      }
+    }
+  }
+}

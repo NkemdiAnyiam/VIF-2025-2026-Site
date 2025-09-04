@@ -1,0 +1,204 @@
+// @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400;600;700&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+/* latin-ext */
+@font-face {
+  font-family: 'Bebas Neue';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/bebasneue/v14/JTUSjIg69CK48gW7PXoo9Wdhyzbi.woff2) format('woff2');
+  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Bebas Neue';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/bebasneue/v14/JTUSjIg69CK48gW7PXoo9Wlhyw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* latin-ext */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw3aXpsog.woff2) format('woff2');
+  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw5aXo.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+
+.heading-primary {
+  font-size: 7rem;
+  font-family: $font-primary;
+  font-weight: 400;
+  line-height: 1.1;
+  text-shadow: $text-shadow;
+  text-align: center;
+  // transition: font-size 0.05s;
+  margin-bottom: 1.8rem;
+
+  @include media-max(860px) {
+    font-size: 6rem;
+  }
+
+  @include media-max(425px) {
+    font-size: 5rem;
+  }
+
+  span {
+    white-space: nowrap;
+  }
+}
+
+.heading-secondary {
+  font-size: 5rem;
+  font-family: $font-bebas;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 3rem;
+  line-height: 1;
+
+  @include media-max(425px) {
+    font-size: 4rem;
+  }
+}
+
+.heading-tertiary {
+  font-size: 2.6rem;
+  margin-bottom: 1.4rem;
+}
+
+.heading-quaternary {
+  font-size: max(2.4rem, 18px);
+  margin-bottom: 1rem;
+}
+
+.paragraphs {
+  line-height: 1.5;
+
+  display: flex;
+  flex-direction: column;
+  gap: 3.6rem;
+
+  .no-gap {
+    margin-bottom: -3.6rem;
+  }
+
+  .indented {
+    margin-left: 2rem;
+  }
+
+  .italicized {
+    font-style: italic;
+  }
+
+  ul, ol {
+    ul, ol {
+      padding-left: 2rem;
+    }
+  }
+
+  ul {
+    list-style: inside;
+
+    ul {
+      list-style-type: circle;
+    }
+  }
+}
+
+.cta-text {
+  font-size: 3.6rem;
+  font-family: $font-bebas;
+  text-align: center;
+
+  span {
+    white-space: nowrap;
+  }
+  
+  @include media-max(375px) {
+    font-size: 3rem;
+  }
+
+  @include media-max(325px) {
+    font-size: 2.8rem;
+    span {
+      white-space: unset;
+    }
+  }
+}
+
+.link {
+  text-decoration: none;
+  padding-bottom: 1px;
+  border-bottom: 1px dashed currentColor;
+  transition: color 0.1s, border-bottom 0.1s;
+  hyphens: auto;
+  overflow-wrap: break-word;
+
+  // // ::selection background color covers up 1px border AND...
+  // // doesn't change currentColor, so use text-decoration when
+  // // ::selection is on links
+  // &::selection {
+  //   text-decoration: underline;
+  //   text-decoration-style: dotted;
+  // }
+
+  &:link,
+  &:visited {
+    color: $color-brand-green-light;
+  }
+
+  &:hover {
+    color: $color-brand-green;
+    border-bottom: 1px solid currentColor;
+  
+    // &::selection {
+    //   text-decoration-style: solid;
+    // }
+  }
+
+  &:active {
+    color: $color-brand-green-dark;
+    border-bottom: 1px solid currentColor;
+  }
+
+  &--lighter {
+    &:link,
+    &:visited {
+      color: lighten($color-brand-green-light, 28);
+    }
+
+    &:hover {
+      color: lighten($color-brand-green, 28);
+      border-bottom: 1px solid currentColor;
+    
+      // &::selection {
+      //   text-decoration-style: solid;
+      // }
+    }
+
+    &:active {
+      color: lighten($color-brand-green-dark, 28);
+      border-bottom: 1px solid currentColor;
+    }
+  }
+}
+
+.strike-through {
+  text-decoration: line-through;
+  opacity: 0.7;
+}
