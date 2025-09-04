@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import { inPersonFair, professionalismWorkshops, virtualFair } from "./events";
+import { fairTimes, inPersonFair, professionalismWorkshops, virtualFair } from "./events";
 import { TimeEvent } from "../utils/events";
 import React from "react";
-import { Notice } from "../components/Notice/Notice";
+// import { Notice } from "../components/Notice/Notice";
 
 export type QA = {
   question: string;
@@ -60,7 +60,7 @@ export const studentQAs: QA[] = [
     content: (
       <>
         <p>
-          <a className="link" href={professionalismWorkshops.link} target="_blank" rel="noreferrer"><strong>REGISTER FOR THE PROFESSIONALISM WORKSHOP!</strong></a>
+          <strong>REGISTER FOR THE PROFESSIONALISM WORKSHOP!</strong>
         </p>
 
         <p>
@@ -73,44 +73,16 @@ export const studentQAs: QA[] = [
         </p>
         <ul>
           <li>
-            <strong>Fall 2024</strong>
+            <strong><a href={professionalismWorkshops.fallLink} className="link" target="_blank" rel="noreferrer">Fall {fairTimes.yearStart}</a></strong>
               <ul>
                 {professionalismWorkshops.fall.map(workshop => listWorkshopData(workshop))}
               </ul>
           </li>
           <li>
-            <strong className="strike-through">Spring 2025</strong>
-            <ul className="strike-through">
+            <strong><a href={professionalismWorkshops.springLink} className="link" target="_blank" rel="noreferrer">Spring {fairTimes.yearEnd}</a></strong>
+            <ul>
               {professionalismWorkshops.spring.map(workshop => listWorkshopData(workshop))}
             </ul>
-            <Notice>
-              <div>
-                The spring professionalism workshops have been cancelled. Please view these recordings from the fall workshops to prepare for the Fair! 
-                If you did not attend the workshop in the fall, your attendance will not be affected.
-                <ul>
-                  <li>
-                    <a
-                      href="https://drive.google.com/file/d/1Qk29Go8oqydcWS7ZOMm4Xn3UA5Jjw9js/view?usp=drive_link"
-                      className="link link--lighter"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      Please view the recordings here
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://docs.google.com/presentation/d/1DVlTay_P9ORjr3p8fLfBC3TejvYH9bju/edit?usp=drive_link&ouid=102154056541970998723&rtpof=true&sd=true"
-                      className="link link--lighter"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      Please view the slides here
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </Notice>
           </li>
         </ul>
         
