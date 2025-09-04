@@ -30,7 +30,7 @@ export function Footer(): JSX.Element {
       </ul>
 
         <p className="footer__copyright">
-          &copy; 2024 Texas A&M University College of Performance, Visualization & Fine Arts. All Rights Reserved.
+          &copy; {new Date().getFullYear()} Texas A&M University College of Performance, Visualization & Fine Arts. All Rights Reserved.
         </p>
 
         <Link to="/about/vif-committee" className="link footer__credits">Credits</Link>
