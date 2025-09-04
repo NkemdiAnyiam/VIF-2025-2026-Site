@@ -131,7 +131,7 @@ export function ForIndustryPage(): JSX.Element {
               </div>
             </Event>
 
-            <Event
+            {/* <Event
               eventName="Alumni Mixer"
             >
               <Notice>
@@ -161,7 +161,7 @@ export function ForIndustryPage(): JSX.Element {
                   </picture>
                 </div>
               </div>
-            </Event>
+            </Event> */}
           </div>
           
         </div>
