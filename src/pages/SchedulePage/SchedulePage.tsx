@@ -54,7 +54,7 @@ export function SchedulePage(): JSX.Element {
 
       <SearchEngineOpt
         title={`Schedule | Viz Industry Fair ${fairTimes.yearEnDashRange}`}
-        description="Find out what companies are attending the fair, when they will be avaiable, and whom they are hiring."
+        description="Find out what companies are attending the fair, when they will be available, and whom they are hiring."
       />
 
       <Header type="normal" imageName={'seated-group-photo-2-min'}>
