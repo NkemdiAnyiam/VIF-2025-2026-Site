@@ -6,9 +6,9 @@ import { SearchEngineOpt } from '../../../components/SearchEngineOpt/SearchEngin
 import { EventBox } from '../../../components/EventBox/EventBox';
 import { Event } from '../../../components/Event/Event';
 import { Header } from '../../../components/Header/Header';
-import { alumniMixer, fairTimes, inPersonFair, mockInterviews, portfolioReviews, virtualFair } from '../../../data';
+import { /*alumniMixer,*/ fairTimes, inPersonFair, mockInterviews, portfolioReviews, virtualFair } from '../../../data';
 import { printEventTimeLong } from '../../../utils';
-import { Notice } from '../../../components/Notice/Notice';
+// import { Notice } from '../../../components/Notice/Notice';
 
 export function ForIndustryPage(): JSX.Element {
   return (
@@ -41,9 +41,9 @@ export function ForIndustryPage(): JSX.Element {
               Please make sure to fill out our form—this will ensure you a "table" at the fair and help us with planning the event.
               Our Visualization Industry Fair is held both virtually and in-person—in the form, you have the option to attend either one or both.
               <br />
-              <strong> The Virtual Fair will be held {virtualFair.weekday}, {virtualFair.month} {virtualFair.weekdate}<sup>{virtualFair.weekdateOrdinal}</sup>, {virtualFair.year} from {virtualFair.timeRange} {virtualFair.timeZone} on {virtualFair.location}.</strong>
+              <strong> The Virtual Fair will be held {printEventTimeLong(virtualFair)} on {virtualFair.location}.</strong>
               <br />
-              <strong> The In-Person Fair will be held {inPersonFair.weekday}, {inPersonFair.month} {inPersonFair.weekdate}<sup>{inPersonFair.weekdateOrdinal}</sup>, {inPersonFair.year} from {inPersonFair.timeRange} {inPersonFair.timeZone} on {inPersonFair.location}.</strong>
+              <strong> The In-Person Fair will be held {printEventTimeLong(inPersonFair)} on {inPersonFair.location}.</strong>
             </p>
 
             <a

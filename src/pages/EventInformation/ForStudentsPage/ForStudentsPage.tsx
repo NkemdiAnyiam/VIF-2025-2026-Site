@@ -6,9 +6,9 @@ import { Header } from '../../../components/Header/Header';
 import { Event } from '../../../components/Event/Event';
 import { EventBox } from '../../../components/EventBox/EventBox';
 import { pastCompanies } from '../../../data/companies';
-import { alumniMixer, fairTimes, inPersonFair, mockInterviews, portfolioReviews, professionalismWorkshops, virtualFair } from '../../../data';
+import { /*alumniMixer,*/ fairTimes, inPersonFair, mockInterviews, portfolioReviews, professionalismWorkshops, virtualFair } from '../../../data';
 import { printEventTimeLong, TimeEvent } from '../../../utils/events';
-import { Notice } from '../../../components/Notice/Notice';
+// import { Notice } from '../../../components/Notice/Notice';
 
 const listWorkshopData = (workshop: TimeEvent): JSX.Element => {
   return (
