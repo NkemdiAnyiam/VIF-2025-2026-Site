@@ -14,7 +14,7 @@ export const virtualFair = new TimeEventWithLinks({
 export const inPersonFair = new TimeEventWithLinks({
   year: 2026,
   month: 'February',
-  weekdate: 21,
+  weekdate: 20,
   startTime: '10am',
   endTime: '4pm',
   studentLink: 'https://forms.gle/Ycs1E51te6ngWS7Y9',
@@ -71,8 +71,8 @@ export const portfolioReviews = {
     studentLink: `https://docs.google.com/forms/d/e/1FAIpQLSeFNRgsp-l8auT_DPu-O-9aKqO7FoPbp4yFcx256cRUaGHGYA/viewform?usp=dialog`,
     industryLink: `https://docs.google.com/forms/d/e/1FAIpQLSc4UxS6RRwHNyYTHHejFFB8TJIwqL9P38fsip2UI7dy8KLmGQ/viewform?usp=dialog`,
     events: [
+      new TimeEvent({ year: 2026, month: 'January', weekdate: 23, startTime: '10am', endTime: '4pm' }),
       new TimeEvent({ year: 2026, month: 'January', weekdate: 24, startTime: '10am', endTime: '4pm' }),
-      new TimeEvent({ year: 2026, month: 'January', weekdate: 25, startTime: '10am', endTime: '4pm' }),
     ]
   },
 };
