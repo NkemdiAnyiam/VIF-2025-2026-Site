@@ -45,6 +45,10 @@
     &--tamu {
       @include icon-solid(#d6d3c4);
     }
+
+    &--discord {
+      @include icon-solid(#5865F2);
+    }
   }
 
   &__copyright,
