@@ -82,7 +82,17 @@ export const committeeMembersData: CommitteeMember[] = [
     description: `Nkemdi Anyiam is a graduate student pursuing a PhD in Computer Science at Texas A&M University. He also graduated with his Master's and Bachelor's in Computer Science and double-minored in Art (New Media) and Game Design & Development at A&M as well. He is currently working as a graduate research assistant, focusing primarily on web visualizations, computer science education, and instructional design. His hobbies include Latin dance, rock climbing, gaming, watching anime, and Jiu-Jitsu.`,
   },
   
-  // TODO: add Alicia Martinez
+  {
+    fullName: `Alicia Martinez`,
+    role: `Marketing Lead`,
+    rank: 2,
+    imageName: `Alicia-Martinez-min`,
+    socials: {
+      linkedin: `www.linkedin.com/in/alicia-martinez-4238b9256`,
+      website: `https://aliciamartinez.myportfolio.com/`
+    },
+    description: `Alicia Martinez is a senior pursuing a B.S. in Visualization with a minor in Graphic Design. She is also the current president of TAMU WIA. She enjoys animation, video games, virtual production, and graphic design.`,
+  },
 
   {
     fullName: `Mayet Andreassen`,
