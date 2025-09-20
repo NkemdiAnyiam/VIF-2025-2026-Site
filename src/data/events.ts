@@ -14,7 +14,7 @@ export const virtualFair = new TimeEventWithLinks({
 export const inPersonFair = new TimeEventWithLinks({
   year: 2026,
   month: 'February',
-  weekdate: 20,
+  weekdate: 27,
   startTime: '10am',
   endTime: '4pm',
   studentLink: 'https://forms.gle/Ycs1E51te6ngWS7Y9',
