@@ -37,7 +37,7 @@ const parse = csvParse.parse;
       // if row empty, don't add to map
       if (!companyName) { continue; }
       // if attending neither fair, don't add to map
-      if (!(attendingVirtualFair === 'Maybe' || attendingInPersonFair === 'Maybe')) { continue; }
+      if (attendingVirtualFair === 'No' && attendingInPersonFair === 'No') { continue; }
 
       if (companiesMap.has(companyName.trim().toLowerCase())) { throw new Error(`ERROR: Duplicate company ${companyName} found`); }
 
