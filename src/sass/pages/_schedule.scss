@@ -88,6 +88,7 @@
       list-style: none;
   
       display: grid;
+      row-gap: 2rem;
       // grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
       // justify-items: center;
       // gap: 2rem;
@@ -102,7 +103,7 @@
 
         &:not(:first-child) {
           .company-card {
-            border-top: none !important;
+            // border-top: none !important;
           }
         }
       }

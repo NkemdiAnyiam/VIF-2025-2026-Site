@@ -6,7 +6,7 @@ export interface CompanyCardProps {
   focuses: string;
   positionTypes: string[];
   website: string;
-  interviews: string;
+  /*interviews: string;*/
 }
 
 const renderTags = (positionTypes: string[]): JSX.Element[] => {
@@ -72,7 +72,7 @@ export function CompanyCard(props: CompanyCardProps): JSX.Element {
           <ul className="company-card__positions-list">{renderTags(props.positionTypes)}</ul>
         </div>
 
-        <div className="company-card__description-section">
+        {/* <div className="company-card__description-section">
           <h4 className="heading-quaternary">Interviews:</h4>
           <div className={`company-card__tag company-card__tag--${
             (() => {
@@ -85,7 +85,7 @@ export function CompanyCard(props: CompanyCardProps): JSX.Element {
           }>
             {props.interviews}
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
