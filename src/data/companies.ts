@@ -64,6 +64,18 @@ export const companies = JSON.parse(`[
     "virtualTimes": "10:00 - 10:30, 12:30 - 1:00",
     "inPersonTimes": "",
     "logoUrlCheckString": "option 2"
+  },
+  {
+    "companyName": "Texas Film Commission",
+    "focuses": "State government organization that assists with all these industries",
+    "positionTypes": [
+      "Interns",
+      "Members"
+    ],
+    "website": "https://gov.texas.gov/film",
+    "virtualTimes": "",
+    "inPersonTimes": "All Day",
+    "logoUrlCheckString": "Option 2"
   }
 ]`);
 /**** GEN:E id="companies-csv" */
