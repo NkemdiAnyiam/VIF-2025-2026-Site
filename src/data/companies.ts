@@ -76,6 +76,20 @@ export const companies = JSON.parse(`[
     "virtualTimes": "",
     "inPersonTimes": "All Day",
     "logoUrlCheckString": "Option 2"
+  },
+  {
+    "companyName": "Cloud 10 Studios",
+    "focuses": "Animation",
+    "positionTypes": [
+      "Interns",
+      "Part-time employees",
+      "Contract workers",
+      "Freelancers"
+    ],
+    "website": "www.cloud10studios.com",
+    "virtualTimes": "10:00 - 10:30, 10:30 - 11:00, 11:00 - 11:30, 11:30 - 12:00",
+    "inPersonTimes": "All Day",
+    "logoUrlCheckString": "Option 2"
   }
 ]`);
 /**** GEN:E id="companies-csv" */
