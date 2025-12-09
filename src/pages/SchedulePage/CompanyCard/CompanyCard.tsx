@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { nameToLogoName, toExternalUrl } from '../../../utils';
+import { nameToLogoName, toExternalUrl, nameToSanitizedName } from '../../../utils';
 
 export interface CompanyCardProps {
   companyName: string;
   focuses: string;
   positionTypes: string[];
   website: string;
+  squareColor?: string;
   /*interviews: string;*/
 }
 
@@ -28,7 +29,7 @@ export function CompanyCard(props: CompanyCardProps): JSX.Element {
   return (
     <div className={`company-card company-card--white`}>
       <div className="company-card__header" onClick={() => setExpanded(!expanded)}>
-        <div className="company-card__photo-container">
+        <div className={`company-card__photo-container company-card__photo-container--${nameToSanitizedName(props.companyName)}`}>
           {/* <picture className="company-card__picture company-card__picture--blurred">
             <source srcSet={require(`../../../images/companies/${logoName}.webp`)} type="image/webp" />
             <source srcSet={require(`../../../images/companies/${logoName}.jpg`)} type="image/jpeg" />

@@ -10,12 +10,26 @@ export function toExternalUrl(url: string): string {
  * @returns 
  * @example
  * ```ts
+ * const newName = nameToSanitizedName('Bluepoint Games'); // 'bluepoint-games'
+ * ```
+ */
+export function nameToSanitizedName(companyName: string): string {
+  // example: Bluepoint Games becomes bluepoint-games
+  return companyName.trim().toLowerCase().replaceAll(/\s+/g, '-').replaceAll(/\(|\)|\.|,|!|:|\?|\/|\\|;|'|"|`/g, '');
+}
+
+/**
+ * 
+ * @param companyName 
+ * @returns 
+ * @example
+ * ```ts
  * const newName = nameToLogoName('Bluepoint Games'); // 'bluepoint-games-min'
  * ```
  */
 export function nameToLogoName(companyName: string): string {
   // example: Bluepoint Games becomes bluepoint-games-min
-  return companyName.trim().toLowerCase().replaceAll(/\s+/g, '-').replaceAll(/\(|\)|\.|,|!|:|\?|\/|\\|;|'|"|`/g, '') + '-min';
+  return nameToSanitizedName(companyName) + '-min';
 };
 
 export * from './events';
