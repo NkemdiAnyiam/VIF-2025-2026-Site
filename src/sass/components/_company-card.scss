@@ -108,6 +108,10 @@
     place-content: center;
 
     // LOGO BACKGROUND OVERRIDES
+    &--audience-media-group {
+      background-color: black;
+    }
+
     &--cloud-10-studios {
       background-color: black;
     }

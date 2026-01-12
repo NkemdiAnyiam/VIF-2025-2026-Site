@@ -3,18 +3,6 @@
 /**** GEN:S id="companies-csv" */
 export const companies = JSON.parse(`[
   {
-    "companyName": "Framestore",
-    "focuses": "Animation, VFX",
-    "positionTypes": [
-      "Interns",
-      "Freelancers"
-    ],
-    "website": "https://www.framestore.com/",
-    "virtualTimes": "11:00 - 11:30, 11:30 - 12:00, 1:30 - 2:00, 2:00 - 2:30, 3:00 - 3:30, 3:30 - 4:00",
-    "inPersonTimes": "All Day",
-    "logoUrlCheckString": "https://drive.google.com/file/d/1-RJHFt8s8khAW1d8HGkuH74GuarZI6pR/view?usp=sharing"
-  },
-  {
     "companyName": "Trio Animation ",
     "focuses": "Animation, Agentic AI Visual Configurators for Industrial and Manufacturing Verticals",
     "positionTypes": [
@@ -90,6 +78,18 @@ export const companies = JSON.parse(`[
     "virtualTimes": "10:00 - 10:30, 10:30 - 11:00, 11:00 - 11:30, 11:30 - 12:00",
     "inPersonTimes": "All Day",
     "logoUrlCheckString": "Option 2"
+  },
+  {
+    "companyName": "Audience Media Group",
+    "focuses": "Graphic Design",
+    "positionTypes": [
+      "Full-time employees",
+      "Part-time employees"
+    ],
+    "website": "https://www.ataudience.com/",
+    "virtualTimes": "All Day",
+    "inPersonTimes": "All Day",
+    "logoUrlCheckString": "https://drive.google.com/file/d/1c9WT5YoshroV2ohTJhOrzxzGEp41ehw7/view?usp=sharing"
   }
 ]`);
 /**** GEN:E id="companies-csv" */

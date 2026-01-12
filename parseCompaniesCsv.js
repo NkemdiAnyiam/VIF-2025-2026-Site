@@ -14,7 +14,8 @@ const parse = csvParse.parse;
   // relevant column headers
   const headers = [
     'company-name', 'focuses', 'position-types', /*'interviews',*/ 'website',
-    'virtual-fair-times', 'in-person-fair-times', 'logo', 'attending-virtual-fair', 'attending-in-person-fair',
+    'virtual-fair-times', 'in-person-fair-times', 'logo', 'attending-virtual-fair',
+    'attending-in-person-fair', 'cancelled',
   ];
   const fileContent = fs.readFileSync(csvFilePath, { encoding: 'utf-8' });
   
@@ -32,12 +33,19 @@ const parse = csvParse.parse;
       const tupleRecord = columnIndices.map(index => row[index]);
       const [companyName, companyFocuses, positionTypes, /*interviews,*/
         website, virtualTimes, inPersonTimes, logoUrlCheckString,
-        attendingVirtualFair, attendingInPersonFair,
+        attendingVirtualFair, attendingInPersonFair, cancelled,
       ] = tupleRecord;
-      // if row empty, don't add to map
-      if (!companyName) { continue; }
-      // if attending neither fair, don't add to map
-      if (attendingVirtualFair === 'No' && attendingInPersonFair === 'No') { continue; }
+
+      if (
+        // if row empty, don't add to map
+        !companyName
+        // if cancelled attendance, don't add to map
+        || /true|yes/i.test(cancelled)
+        // if attending neither fair, don't add to map
+        || (attendingVirtualFair === 'No' && attendingInPersonFair === 'No')
+      ) {
+        continue;
+      }
 
       if (companiesMap.has(companyName.trim().toLowerCase())) { throw new Error(`ERROR: Duplicate company ${companyName} found`); }
 

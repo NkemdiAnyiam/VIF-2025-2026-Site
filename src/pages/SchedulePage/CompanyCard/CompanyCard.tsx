@@ -29,6 +29,7 @@ export function CompanyCard(props: CompanyCardProps): JSX.Element {
   return (
     <div className={`company-card company-card--white`}>
       <div className="company-card__header" onClick={() => setExpanded(!expanded)}>
+        {/* override background color by adding style to .company-card__photo-container--<company name> */}
         <div className={`company-card__photo-container company-card__photo-container--${nameToSanitizedName(props.companyName)}`}>
           {/* <picture className="company-card__picture company-card__picture--blurred">
             <source srcSet={require(`../../../images/companies/${logoName}.webp`)} type="image/webp" />
