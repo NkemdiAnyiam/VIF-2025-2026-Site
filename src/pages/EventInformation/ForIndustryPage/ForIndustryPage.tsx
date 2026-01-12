@@ -56,7 +56,7 @@ export function ForIndustryPage(): JSX.Element {
             </a>
 
             <p>
-              Additionally, VIF has access to presentation and interview rooms during the fair.
+              Additionally, VIF has access to presentation rooms during the fair.
               If your company/organization would like to hold a presentation on a specific topic or interview students,
               please fill out the specified area in the registration form.
             </p>
