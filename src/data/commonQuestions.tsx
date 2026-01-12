@@ -174,14 +174,14 @@ export const studentQAs: QA[] = [
 ];
 
 export const companyQAs: QA[] = [
-  {
-    question: "Can we review student resumes and portfolios prior to the Industry Fair so we can conduct interviews while we're there?",
-    content: (
-      <p>
-        Certainly! Please include this request on your registration form and we will make them available to you.
-      </p>
-    ),
-  },
+  // {
+  //   question: "Can we review student resumes and portfolios prior to the Industry Fair so we can conduct interviews while we're there?",
+  //   content: (
+  //     <p>
+  //       Certainly! Please include this request on your registration form and we will make them available to you.
+  //     </p>
+  //   ),
+  // },
 
   {
     question: "Is it mandatory to attend both fairs? Or either?",
