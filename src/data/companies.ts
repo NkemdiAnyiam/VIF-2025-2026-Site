@@ -90,6 +90,19 @@ export const companies = JSON.parse(`[
     "virtualTimes": "All Day",
     "inPersonTimes": "All Day",
     "logoUrlCheckString": "https://drive.google.com/file/d/1c9WT5YoshroV2ohTJhOrzxzGEp41ehw7/view?usp=sharing"
+  },
+  {
+    "companyName": "Spartacus Studios LLC",
+    "focuses": "Animation, Game Development, Graphic Design, Virtual Production",
+    "positionTypes": [
+      "Interns",
+      "Contract workers",
+      "Freelancers"
+    ],
+    "website": "https://www.spartacusstudios.com/",
+    "virtualTimes": "10:00 - 10:30, 10:30 - 11:00",
+    "inPersonTimes": "All Day",
+    "logoUrlCheckString": "Option 2"
   }
 ]`);
 /**** GEN:E id="companies-csv" */
