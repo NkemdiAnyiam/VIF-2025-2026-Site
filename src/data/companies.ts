@@ -103,6 +103,29 @@ export const companies = JSON.parse(`[
     "virtualTimes": "10:00 - 10:30, 10:30 - 11:00",
     "inPersonTimes": "All Day",
     "logoUrlCheckString": "Option 2"
+  },
+  {
+    "companyName": "Kompan",
+    "focuses": "Animation, Graphic Design, Virtual Production, Interactive Media",
+    "positionTypes": [
+      "Full-time employees"
+    ],
+    "website": "Kompan.com",
+    "virtualTimes": "All Day",
+    "inPersonTimes": "All Day",
+    "logoUrlCheckString": "maybe"
+  },
+  {
+    "companyName": "AEM Creations ",
+    "focuses": "Interactive Media",
+    "positionTypes": [
+      "Interns",
+      "Contract workers"
+    ],
+    "website": "www.aem2create.com",
+    "virtualTimes": "",
+    "inPersonTimes": "All Day",
+    "logoUrlCheckString": "Option 2"
   }
 ]`);
 /**** GEN:E id="companies-csv" */
