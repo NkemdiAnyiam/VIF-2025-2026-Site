@@ -126,6 +126,20 @@ export const companies = JSON.parse(`[
     "virtualTimes": "",
     "inPersonTimes": "All Day",
     "logoUrlCheckString": "Option 2"
+  },
+  {
+    "companyName": "Red Productions",
+    "focuses": "Virtual Production, Commercial + Film Production",
+    "positionTypes": [
+      "Contract workers",
+      "Freelancers",
+      "Volunteers",
+      "Members"
+    ],
+    "website": "redproductions.com",
+    "virtualTimes": "",
+    "inPersonTimes": "All Day",
+    "logoUrlCheckString": "Option 2"
   }
 ]`);
 /**** GEN:E id="companies-csv" */
