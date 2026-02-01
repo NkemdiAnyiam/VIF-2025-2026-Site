@@ -156,6 +156,18 @@ export const companies = JSON.parse(`[
     "virtualTimes": "All Day",
     "inPersonTimes": "All Day",
     "logoUrlCheckString": "Option 1"
+  },
+  {
+    "companyName": "PBK",
+    "focuses": "Architecture Visualization ",
+    "positionTypes": [
+      "Interns",
+      "Full-time employees"
+    ],
+    "website": "https://pbk.com/",
+    "virtualTimes": "",
+    "inPersonTimes": "All Day",
+    "logoUrlCheckString": "https://drive.google.com/drive/folders/18KcJ0zg1vIMxpxuq-01pnO2DapxEPTx-"
   }
 ]`);
 /**** GEN:E id="companies-csv" */
