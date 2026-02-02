@@ -168,6 +168,18 @@ export const companies = JSON.parse(`[
     "virtualTimes": "",
     "inPersonTimes": "All Day",
     "logoUrlCheckString": "https://drive.google.com/drive/folders/18KcJ0zg1vIMxpxuq-01pnO2DapxEPTx-"
+  },
+  {
+    "companyName": "Deloitte",
+    "focuses": "UI/UX, Consulting",
+    "positionTypes": [
+      "Interns",
+      "Full-time employees"
+    ],
+    "website": "https://www.deloitte.com/us/en/careers/careers.html",
+    "virtualTimes": "All Day",
+    "inPersonTimes": "",
+    "logoUrlCheckString": "https://upload.wikimedia.org/wikipedia/commons/8/82/DeloitteNewLogo.png"
   }
 ]`);
 /**** GEN:E id="companies-csv" */
