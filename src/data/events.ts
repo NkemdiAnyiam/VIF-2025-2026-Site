@@ -19,7 +19,7 @@ export const inPersonFair = new TimeEventWithLinks({
   endTime: '4pm',
   studentLink: 'https://forms.gle/Ycs1E51te6ngWS7Y9',
   industryLink: 'https://docs.google.com/forms/d/e/1FAIpQLSdqmJc_Cc5NRitKg2Uh-ylhUyaLYQ8MOCUnowrKAL6A4xZAXw/viewform?usp=dialog',
-  location: 'the TAMU campus (Location To Be Determined)',
+  location: 'the TAMU campus in the MSC Gates Ballroom (MSC 2400)',
 });
 
 export const fairTimes = {
