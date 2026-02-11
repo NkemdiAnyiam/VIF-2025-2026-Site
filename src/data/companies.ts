@@ -180,6 +180,17 @@ export const companies = JSON.parse(`[
     "virtualTimes": "All Day",
     "inPersonTimes": "",
     "logoUrlCheckString": "https://upload.wikimedia.org/wikipedia/commons/8/82/DeloitteNewLogo.png"
+  },
+  {
+    "companyName": "Reel FX",
+    "focuses": "Animation",
+    "positionTypes": [
+      "Members"
+    ],
+    "website": "www.reelfx.com",
+    "virtualTimes": "11:00 - 11:30, 11:30 - 12:00, 12:30 - 1:00, 1:00 - 1:30",
+    "inPersonTimes": "",
+    "logoUrlCheckString": "Option 2"
   }
 ]`);
 /**** GEN:E id="companies-csv" */
