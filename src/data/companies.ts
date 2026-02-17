@@ -42,6 +42,18 @@ export const companies = JSON.parse(`[
     "logoUrlCheckString": "https://drive.google.com/file/d/1uN3q9WziZWrBfAt5c3wwttCI8vgDRxxB/view?usp=sharing"
   },
   {
+    "companyName": "Electronic Arts, EA SPORTS",
+    "focuses": "Animation, Game Development, Graphic Design, Virtual Production",
+    "positionTypes": [
+      "Interns",
+      "Full-time employees"
+    ],
+    "website": "www.ea.com",
+    "virtualTimes": "10:00 - 10:30, 12:30 - 1:00",
+    "inPersonTimes": "",
+    "logoUrlCheckString": "option 2"
+  },
+  {
     "companyName": "Texas Film Commission",
     "focuses": "State government organization that assists with all these industries",
     "positionTypes": [
