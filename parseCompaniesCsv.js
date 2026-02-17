@@ -15,7 +15,8 @@ const parse = csvParse.parse;
   const headers = [
     'company-name', 'focuses', 'position-types', /*'interviews',*/ 'website',
     'virtual-fair-times', 'in-person-fair-times', 'logo', 'attending-virtual-fair',
-    'attending-in-person-fair', 'cancelled',
+    'attending-in-person-fair',
+    // 'cancelled',
   ];
   const fileContent = fs.readFileSync(csvFilePath, { encoding: 'utf-8' });
   
@@ -33,14 +34,15 @@ const parse = csvParse.parse;
       const tupleRecord = columnIndices.map(index => row[index]);
       const [companyName, companyFocuses, positionTypes, /*interviews,*/
         website, virtualTimes, inPersonTimes, logoUrlCheckString,
-        attendingVirtualFair, attendingInPersonFair, cancelled,
+        attendingVirtualFair, attendingInPersonFair,
+        // cancelled,
       ] = tupleRecord;
 
       if (
         // if row empty, don't add to map
         !companyName
-        // if cancelled attendance, don't add to map
-        || /true|yes/i.test(cancelled)
+        // // if cancelled attendance, don't add to map
+        // || /true|yes/i.test(cancelled)
         // if attending neither fair, don't add to map
         || (attendingVirtualFair === 'No' && attendingInPersonFair === 'No')
       ) {
