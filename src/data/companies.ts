@@ -66,20 +66,6 @@ export const companies = JSON.parse(`[
     "logoUrlCheckString": "Option 2"
   },
   {
-    "companyName": "Cloud 10 Studios",
-    "focuses": "Animation",
-    "positionTypes": [
-      "Interns",
-      "Part-time employees",
-      "Contract workers",
-      "Freelancers"
-    ],
-    "website": "www.cloud10studios.com",
-    "virtualTimes": "10:00 - 10:30, 10:30 - 11:00, 11:00 - 11:30, 11:30 - 12:00",
-    "inPersonTimes": "All Day",
-    "logoUrlCheckString": "Option 2"
-  },
-  {
     "companyName": "Audience Media Group",
     "focuses": "Graphic Design",
     "positionTypes": [
@@ -103,17 +89,6 @@ export const companies = JSON.parse(`[
     "virtualTimes": "10:00 - 10:30, 10:30 - 11:00",
     "inPersonTimes": "All Day",
     "logoUrlCheckString": "Option 2"
-  },
-  {
-    "companyName": "Kompan",
-    "focuses": "Animation, Graphic Design, Virtual Production, Interactive Media",
-    "positionTypes": [
-      "Full-time employees"
-    ],
-    "website": "Kompan.com",
-    "virtualTimes": "All Day",
-    "inPersonTimes": "All Day",
-    "logoUrlCheckString": "maybe"
   },
   {
     "companyName": "AEM Creations ",
@@ -188,6 +163,19 @@ export const companies = JSON.parse(`[
     "website": "www.reelfx.com",
     "virtualTimes": "11:00 - 11:30, 11:30 - 12:00, 12:30 - 1:00, 1:00 - 1:30",
     "inPersonTimes": "",
+    "logoUrlCheckString": "Option 2"
+  },
+  {
+    "companyName": "MOREgroup Inc",
+    "focuses": "Animation, Virtual Production, Interactive Media",
+    "positionTypes": [
+      "Interns",
+      "Full-time employees",
+      "Part-time employees"
+    ],
+    "website": "https://moregroup-inc.com/",
+    "virtualTimes": "",
+    "inPersonTimes": "10:00 - 10:30, 10:30 - 11:00, 11:00 - 11:30, 11:30 - 12:00, 12:30 - 1:00, 1:00 - 1:30, 1:30 - 2:00, 2:00 - 2:30",
     "logoUrlCheckString": "Option 2"
   }
 ]`);
